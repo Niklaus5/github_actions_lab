@@ -1,0 +1,24 @@
+
+name: My First GitHub Actions Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display message
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Check environment
+        run: |
+          echo "Learning CI/CD"
+          git --version
+          echo "Pipeline executed successfully"
